@@ -1,8 +1,10 @@
 let http=require('http');
-// let fileSys=require('fs');
+let fileSys=require('fs');
 
 let server=http.createServer(function(req,res){
-    console.log(req.url);
+    //console.log(req.url);
+    if(req.url=="/")
+    {
     res.writeHead(200,{'content-Type':'application/json'});
     // let myReadStream=fileSys.createReadStream(__dirname + '/index.html','utf8');
     // myReadStream.pipe(res);
@@ -13,6 +15,11 @@ let server=http.createServer(function(req,res){
     };
     res.end(JSON.stringify(myObj));
    
+}
+else{
+   res.writeHead(200,{'content-Type':'text/html'});
+   fileSys.createReadStream(__dirname + "/index.html","utf8").pipe(res);
+}
 });
 server.listen(3000,'127.0.0.1');
 
