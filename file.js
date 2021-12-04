@@ -2,12 +2,15 @@
 
 //creating directory
 let fileSys=require('fs');
+if(!fileSys.existsSync('./Doc'))
+{
 fileSys.mkdir('./Doc',(err)=>{
     if(err){
         console.log(err);
     }
     console.log("directory created")
 })
+}
 
 
 //writing files
