@@ -2,9 +2,12 @@
 
 //creating directory
 let fileSys=require('fs');
-// fileSys.mkdir('./Doc',()=>{
-//     console.log("directory created")
-// })
+fileSys.mkdir('./Doc',(err)=>{
+    if(err){
+        console.log(err);
+    }
+    console.log("directory created")
+})
 
 
 //writing files
@@ -16,10 +19,11 @@ let fileSys=require('fs');
 
 //reading file
 
-fileSys.readFile("./Doc/bolg1.txt",(err,blogData)=>{
-    if(err){
-        console.log(err);
-    }
-    console.log(blogData.toString());
-});
-console.log("done");
+// fileSys.readFile("./Doc/bolg1.txt",(err,blogData)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     console.log(blogData.toString());
+// });
+// console.log("done");
+
