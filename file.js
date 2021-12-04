@@ -8,6 +8,6 @@ let fileSys=require('fs');
 
 
 //writing files
-fileSys.writeFile('./Doc/bolg1.txt',"hello sirisha",()=>{
+fileSys.writeFile('./Doc/bolg1.txt',"hello hulk",()=>{
     console.log("file created")
 })
